@@ -1,0 +1,21 @@
+﻿@model CreateDepartmentDto
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Department</h1>
+
+<br />
+<br />
+
+<form asp-action="Create" asp-controller="Department" method="post">
+    <partial name="PartialViews/CreateEditPartialView" />
+    <div class="my-3">
+        <button type="submit" value="submit" class="btn btn-primary">Create</button>
+        <a asp-action="Index" asp-controller="Department" class="btn btn-secondary">Back</a>
+    </div>
+</form>
+@section Validation {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

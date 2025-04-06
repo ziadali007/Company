@@ -1,0 +1,45 @@
+﻿@model Employee
+<div class="my-3 form-group">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" class="form-control" readonly />
+</div>
+<div class="my-3 form-group">
+    <label asp-for="Age"></label>
+    <input asp-for="Age" class="form-control" readonly />
+</div>
+<div class="my-3 form-group">
+    <label asp-for="Email"></label>
+    <input asp-for="Email" class="form-control" readonly />
+</div>
+<div class="my-3 form-group">
+    <label asp-for="Address"></label>
+    <input asp-for="Address" class="form-control" readonly />
+</div>
+<div class="my-3 form-group">
+    <label asp-for="Salary"></label>
+    <input asp-for="Salary" class="form-control" readonly />
+</div>
+<div class="my-3 form-group">
+    <label asp-for="Phone"></label>
+    <input asp-for="Phone" class="form-control" readonly />
+</div>
+<div class="my-3 form-group">
+    <input asp-for="IsActive" class="form-check" disabled />
+    <label asp-for="IsActive"></label>
+</div>
+<div class="my-3 form-group">
+    <input asp-for="IsDeleted" class="form-check" disabled />
+    <label asp-for="IsDeleted"></label>
+</div>
+<div class="my-3 form-group">
+    <label asp-for="HiringDate"></label>
+    <input asp-for="HiringDate" class="form-control" readonly />
+</div>
+<div class="my-3 form-group">
+    <label asp-for="CreateAt"></label>
+    <input asp-for="CreateAt" class="form-control" readonly />
+</div>
+<div class="my-3 form-group">
+    <label asp-for="Department" class="col-form-label"></label>
+    <input asp-for="Department.Name" class="form-control" readonly />
+</div>

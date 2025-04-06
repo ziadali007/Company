@@ -1,0 +1,99 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* Make header background black */
+header {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+/* Make navbar text white */
+/* Make navbar transparent */
+.navbar {
+    background-color: transparent !important;
+    margin-bottom: 0 !important;
+}
+
+/* Set navbar text color to black */
+.navbar-brand, .nav-link {
+    color: black !important;
+}
+
+    /* Change navbar text color on hover */
+    .nav-link:hover {
+        color: #f8c146 !important; /* Gold color on hover */
+        transition: color 0.3s ease-in-out;
+    }
+
+
+th {
+    color: #f5f5dc !important;
+}
+
+/* Apply white text color only to table data cells */
+td {
+    color: #f5f5dc !important;
+}
+
+h1 {
+    color: white;
+}
+
+input[name="Search"] {
+    background-color: transparent !important;
+    color: black !important; /* Ensures text remains visible */
+    border: 1px solid black !important; /* Optional: Adds a visible border */
+}
+
+    input[name="Search"]::placeholder {
+        color: rgba(0, 0, 0, 0.5); /* Light gray placeholder text */
+    }
+
+
+body {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /* Create the animation */
+    animation: slideshow 15s infinite linear;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@keyframes slideshow {
+    0% {
+        background-image: url('/BackgroundImages/background04.jpg');
+    }
+
+    33% {
+        background-image: url('/BackgroundImages/background01.jpg');
+    }
+
+    66% {
+        background-image: url('/BackgroundImages/background02.jpg');
+    }
+
+    100% {
+        background-image: url('/BackgroundImages/background03.jpg');
+    }
+}
