@@ -18,10 +18,13 @@ namespace Presentation_Layer.Controllers
         private readonly UserManager<AppUser> _userManager;
 
         private readonly SignInManager<AppUser> _signInManager;
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+
+        private readonly IMailService _mailService;
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IMailService mailService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _mailService = mailService;
         }
         [HttpGet]
         public IActionResult SignUp()
@@ -189,13 +192,14 @@ namespace Presentation_Layer.Controllers
                         Body = url
                     };
 
-                    var flag = EmailSetting.SendEmail(email);
-
+                    var flag = _mailService.SendEmail(email);
                     if (flag)
                     {
 
                         return RedirectToAction("CheckYourInbox");
                     }
+
+
                 }
 
             }
