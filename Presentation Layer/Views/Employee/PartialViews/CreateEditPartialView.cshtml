@@ -3,61 +3,61 @@
     var department = new SelectList(ViewData["departments"] as IEnumerable<Department>, "Id", "Name");
 }
 <div class="my-3 form-group">
-    <label asp-for="Name"></label>
+    <label asp-for="Name" style="color : whitesmoke"></label>
     <input asp-for="Name" class="form-control" />
     <span asp-validation-for="Name" class="text-danger"></span>
 </div>
 <div class="my-3 form-group">
-    <label asp-for="Age"></label>
+    <label asp-for="Age" style="color : whitesmoke"></label>
     <input asp-for="Age" class="form-control" />
     <span asp-validation-for="Age" class="text-danger"></span>
 </div>
 <div class="my-3 form-group">
-    <label asp-for="Email"></label>
+    <label asp-for="Email" style="color : whitesmoke"></label>
     <input asp-for="Email" class="form-control" />
     <span asp-validation-for="Email" class="text-danger"></span>
 </div>
 <div class="my-3 form-group">
-    <label asp-for="Address"></label>
+    <label asp-for="Address" style="color : whitesmoke"></label>
     <input asp-for="Address" class="form-control" />
     <span asp-validation-for="Address" class="text-danger"></span>
 </div>
 <div class="my-3 form-group">
-    <label asp-for="Salary"></label>
+    <label asp-for="Salary" style="color : whitesmoke"></label>
     <input asp-for="Salary" class="form-control" />
     <span asp-validation-for="Salary" class="text-danger"></span>
 </div>
 <div class="my-3 form-group">
-    <label asp-for="Phone"></label>
+    <label asp-for="Phone" style="color : whitesmoke"></label>
     <input asp-for="Phone" class="form-control" />
     <span asp-validation-for="Phone" class="text-danger"></span>
 </div>
 <div class="my-3 form-group">
     <input asp-for="IsActive" class="form-check" />
-    <label asp-for="IsActive"></label>
+    <label asp-for="IsActive" style="color : whitesmoke"></label>
 </div>
 <div class="my-3 form-group">
     <input asp-for="IsDeleted" class="form-check" />
-    <label asp-for="IsDeleted"></label>
+    <label asp-for="IsDeleted" style="color : whitesmoke"></label>
 </div>
 <div class="my-3 form-group">
-    <label asp-for="HiringDate"></label>
+    <label asp-for="HiringDate" style="color : whitesmoke"></label>
     <input asp-for="HiringDate" class="form-control" />
     <span asp-validation-for="HiringDate" class="text-danger"></span>
 </div>
 <div class="my-3 form-group">
-    <label asp-for="CreateAt"></label>
+    <label asp-for="CreateAt" style="color : whitesmoke"></label>
     <input asp-for="CreateAt" class="form-control" />
     <span asp-validation-for="CreateAt" class="text-danger"></span>
 </div>
 <div class="my-3 form-group">
-    <label asp-for="DepartmentId" class="col-form-label"></label>
+    <label asp-for="DepartmentId" class="col-form-label" style="color : whitesmoke"></label>
     <select asp-for="DepartmentId" asp-items="@department" class="form-control">
       <option value="@null">--Select Department--</option>
     </select>
    
 </div>
 <div class="my-3 form-group">
-    <label asp-for="Image"></label>
+    <label asp-for="Image" style="color : whitesmoke"></label>
     <input asp-for="Image" class="form-control" />
 </div>
