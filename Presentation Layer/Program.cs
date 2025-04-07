@@ -63,6 +63,7 @@ namespace Presentation_Layer
            {
                options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
                options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+               options.CallbackPath = "/signin-google";
            })
            .AddFacebook(options =>
            {
