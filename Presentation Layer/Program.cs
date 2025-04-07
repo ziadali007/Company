@@ -11,6 +11,7 @@ using Presentation_Layer.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authentication.Facebook;
+using Presentation_Layer.Helpers;
 
 namespace Presentation_Layer
 {
@@ -41,6 +42,10 @@ namespace Presentation_Layer
             builder.Services.AddIdentity<AppUser, IdentityRole>()
                 .AddEntityFrameworkStores<CompanyDbContext>()
                 .AddDefaultTokenProviders();
+
+            builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+
+            builder.Services.AddScoped<IMailService, EmailSetting>();
 
             builder.Services.ConfigureApplicationCookie(options =>
             {
