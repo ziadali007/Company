@@ -101,7 +101,7 @@ namespace Presentation_Layer.Controllers
         [AllowAnonymous]
         public IActionResult GoogleLogin()
         {
-            var properties = new AuthenticationProperties
+            var properties = new AuthenticationProperties()
             {
                 RedirectUri = Url.Action("GoogleResponse")
             };
@@ -112,15 +112,17 @@ namespace Presentation_Layer.Controllers
         public async Task<IActionResult> GoogleResponse()
         {
             // Sign in the user with the external claims
-            var result = await HttpContext.AuthenticateAsync(IdentityConstants.ExternalScheme);
+            var result = await HttpContext.AuthenticateAsync(GoogleDefaults.AuthenticationScheme);
 
-            if (result?.Succeeded != true)
-            {
-                return RedirectToAction("Login"); // Handle failure
-            }
+            var claims=result.Principal.Identities.FirstOrDefault().Claims.Select(
+                claims => new
+                {
+                    claims.Type,
+                    claims.Value,
+                    claims.Issuer,
+                    claims.OriginalIssuer,
+                });
 
-            // Sign in the user with application cookie
-            await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme, result.Principal);
 
             return RedirectToAction("Index", "Home");
         }
