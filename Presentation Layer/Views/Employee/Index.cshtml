@@ -52,7 +52,8 @@
     <table class="table table-hover table-striped">
 
         <thead>
-            <tr>                
+            <tr>
+                <th>Image</th>
                 <th>Name</th>
                 <th>Age</th>
                 <th>Email</th>
@@ -63,10 +64,10 @@
                 <th>@Html.DisplayNameFor(E => E.HiringDate)</th>
                 <th>@Html.DisplayNameFor(E => E.CreateAt)</th>
                 <th>Department</th>
-
-
+                <th>Actions</th> <!-- For buttons partial view -->
             </tr>
         </thead>
+
 
         <tbody>
             @foreach (var employee in Model)

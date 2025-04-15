@@ -5,19 +5,160 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form asp-action="AddOrRemoveUsers" asp-route-roleId="@roleId">
+<div class="user-role-container">
+    <h2 class="page-title">Manage Users in Role</h2>
 
-    @for (int i = 0; i < Model.Count; i++)
-    {
-        <div class="form-group">
-            <input asp-for="@Model[i].IsSelected" />
-            <label asp-for="@Model[i].IsSelected"> @Model[i].UserName</label>
+    <form asp-action="AddOrRemoveUsers" asp-route-roleId="@roleId" class="user-role-form">
+        <div class="user-list">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <div class="user-item">
+                    <label class="user-checkbox">
+                        <input type="checkbox" asp-for="@Model[i].IsSelected" class="checkbox-input">
+                        <span class="checkmark"></span>
+                        <label asp-for="@Model[i].IsSelected">@Model[i].UserName</label>
+                    </label>
+                    <input type="hidden" asp-for="@Model[i].UserId" />
+                    <input type="hidden" asp-for="@Model[i].UserName" />
+                </div>
+            }
         </div>
 
-        <input type="hidden" asp-for="@Model[i].UserId" />
-        <input type="hidden" asp-for="@Model[i].UserName" />
+        <div class="form-actions">
+            <button type="submit" class="btn update-btn">Update</button>
+            <a asp-action="Edit" asp-controller="@roleId" class="btn cancel-btn">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<style>
+    /* This will ensure the background covers the entire viewport */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #e6f2ff !important; /* Light blue background */
     }
 
-    <input type="submit" value="Update" class="btn btn-success"/>
-    <a asp-action="Edit" asp-controller="Role" class="btn btn-light">Cancel</a>
-</form>
+    /* Make sure our container takes appropriate space */
+    .user-role-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 30px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .page-title {
+        color: #2c3e50;
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .user-list {
+        margin-bottom: 25px;
+    }
+
+    .user-item {
+        padding: 12px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .user-checkbox {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-left: 35px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .checkbox-input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 22px;
+        width: 22px;
+        background-color: #fff;
+        border: 2px solid #aaa;
+        border-radius: 4px;
+        transition: all 0.2s;
+    }
+
+    .user-checkbox:hover .checkbox-input ~ .checkmark {
+        border-color: #666;
+    }
+
+    .user-checkbox .checkbox-input:checked ~ .checkmark {
+        background-color: #4CAF50;
+        border-color: #4CAF50;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .user-checkbox .checkbox-input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .user-checkbox .checkmark:after {
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+
+    .username {
+        margin-left: 10px;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .update-btn {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+        .update-btn:hover {
+            background-color: #3e8e41;
+        }
+
+    .cancel-btn {
+        background-color: #f1f1f1;
+        color: #333;
+    }
+
+        .cancel-btn:hover {
+            background-color: #ddd;
+        }
+</style>
