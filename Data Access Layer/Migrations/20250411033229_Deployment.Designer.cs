@@ -4,16 +4,19 @@ using Data_Access_Layer.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Data_Access_Layer.Data.Migrations
+namespace Data_Access_Layer.Migrations
 {
     [DbContext(typeof(CompanyDbContext))]
-    partial class CompanyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250411033229_Deployment")]
+    partial class Deployment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

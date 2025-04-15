@@ -5,6 +5,8 @@
     <RootNamespace>Business_Logic_Layer</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <BaseOutputPath>E:\Company\Business Logic Layer\obj\Release\net8.0\ref</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
