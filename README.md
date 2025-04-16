@@ -4,7 +4,7 @@ A full-stack web application built using **.NET Core** with a clean **3-tier arc
 
 ## 🔧 Technologies Used
 
-- **.NET Core 7**
+- **.NET Core 8**
 - **ASP.NET Core MVC**
 - **Entity Framework Core**
 - **SQL Server**
